@@ -1,0 +1,43 @@
+{
+  "source_zip": "TrailOneGPXAndroid-UI-Only-Palette-v1.0.0.zip",
+  "changed_original_files": [
+    "app/src/main/java/com/trailone/gpx/ui/MainActivity.kt"
+  ],
+  "unchanged_original_files": [
+    "BUILD_AND_VALIDATION.md",
+    "settings.gradle.kts",
+    "SDK_BUILD_FIX.md",
+    "ANDROID_COMPILER_FIX.md",
+    "PARITY.md",
+    "README.md",
+    "gradle.properties",
+    "Dockerfile.android",
+    ".dockerignore",
+    "LICENSE",
+    "build.gradle.kts",
+    ".gitignore",
+    "app/build.gradle.kts",
+    "app/src/main/AndroidManifest.xml",
+    "app/src/main/java/com/trailone/gpx/core/GpxEngine.kt",
+    "app/src/main/java/com/trailone/gpx/network/NominatimGeocoder.kt",
+    "app/src/test/java/com/trailone/gpx/core/GpxEngineTest.kt",
+    "tools/test-core.sh",
+    "tools/EngineSmoke.kt",
+    "tools/build-apk-docker.sh",
+    "tools/bootstrap-wrapper.sh"
+  ],
+  "added_files": [
+    "GUIDED_IMPLEMENTATION.md",
+    "app/src/main/java/com/trailone/gpx/ui/GuidedSession.kt",
+    "app/src/test/java/com/trailone/gpx/ui/GuidedSessionTest.kt",
+    "tools/test-guided.sh",
+    "tools/GuidedSessionSmoke.kt"
+  ],
+  "approved_palette_version": "1.0.0",
+  "validation": {
+    "engine_smoke": "6/6",
+    "guided_smoke": "12/12",
+    "guided_unit_scenarios_local_harness": "8/8",
+    "android_apk_compiled": false
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "record_id": "TRAILONE-GPX-APP-BASELINE-001",
+  "record_version": "1.0.0",
+  "recorded_on": "2026-10-18",
+  "record_type": "OWNER_APPROVAL",
+  "status": "ACCEPTED_FUNCTIONAL_BASELINE_BINARY_UNPINNED",
+  "scope": "Internal TrailONE 505 native Android GPX utility; single primary device; no public release intent",
+  "owner_approval": {
+    "decision": "Use the current installed application release as the baseline for future development",
+    "evidence": "Explicit approval in BRAND project conversation following owner confirmation of successful installation, expected behavior and compliant GPX output",
+    "accepted_date": "2026-10-18"
+  },
+  "accepted_behavior": {
+    "workflow": [
+      "IMPORT",
+      "CONFIGURE",
+      "GENERATE",
+      "REVIEW",
+      "EXPORT"
+    ],
+    "source_handling": "Preserve original GPX and output a separate enriched GPX document",
+    "processing": "Existing accepted GPX enrichment, waypoint generation and statistics",
+    "user_reported_acceptance": [
+      "successful installation",
+      "expected application behavior",
+      "output meets expected requirements"
+    ]
+  },
+  "application": {
+    "name": "TrailOne GPX",
+    "application_id": "com.trailone.gpx",
+    "app_build_config_version_name": "1.0.0",
+    "app_build_config_version_code": 1,
+    "version_verified_from_installed_apk": false
+  },
+  "primary_device": {
+    "manufacturer": "Xiaomi",
+    "model": "23090RA98G",
+    "name": "Redmi Note 13 Pro+ 5G",
+    "reported_os": "HyperOS 3 / Android 16",
+    "reported_api": 36,
+    "device_data_source": "Owner reported"
+  },
+  "brand_authority": {
+    "repository": "nestrada88/trailone-brand-context",
+    "palette_path": "brand/visual-identity/color/trailone.palette.json",
+    "palette_version": "1.0.0",
+    "palette_sha256": "092f71bb78c05738e8189c181a0c97454269caedddd3d16794d7622fc94107e9",
+    "palette_status": "APPROVED_UNSIGNED"
+  },
+  "source_reference": {
+    "archive_filename": "TrailOneGPXAndroid-Internal-Docker-Builder-v0.1.3-EditText-Fixed.zip",
+    "archive_sha256": "2744999ede11ff5b7b08433d6d17d55c11e1ccf111bde9d247588ead561279ae",
+    "archive_integrity": "ZIP_MEMBER_CRC_CHECK_PASSED",
+    "relationship_to_installed_binary": "Delivered candidate associated with accepted workflow; exact binary-to-source provenance not independently verified"
+  },
+  "installed_binary_identity": {
+    "apk_sha256": null,
+    "signing_certificate_sha256": null,
+    "source_revision": null,
+    "build_run_id": null,
+    "identification_status": "PENDING_OWNER_BUILD_EVIDENCE"
+  },
+  "release_governance": {
+    "freeze_scope": "Accepted functional behavior and on-device operation",
+    "changes_require": "Explicit approved scope, version increment, regression tests and rollback plan",
+    "preserve_brand_assets": true,
+    "preserve_accepted_gpx_semantics": true,
+    "public_release": false,
+    "approval_does_not_prove": "Cryptographic signing, binary reproducibility or exhaustive device testing"
+  },
+  "repository_changes_performed": false
+}

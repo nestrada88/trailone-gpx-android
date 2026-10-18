@@ -1,0 +1,47 @@
+# syntax=docker/dockerfile:1
+# Native Android APK build; no Android Studio or Android SDK is needed on the host.
+# The Gradle official image is Debian/Ubuntu-based (glibc), not Alpine.
+FROM gradle:8.13-jdk17-noble AS android-builder
+
+USER root
+
+ENV ANDROID_SDK_ROOT=/opt/android-sdk \
+    ANDROID_HOME=/opt/android-sdk
+ENV PATH="${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin:${ANDROID_SDK_ROOT}/platform-tools:${PATH}"
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates curl unzip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Official Android SDK command-line tools for Linux; version observed Oct 2026.
+ARG ANDROID_CMDLINE_TOOLS_REV=15859902
+RUN mkdir -p "${ANDROID_SDK_ROOT}/cmdline-tools/latest" \
+    && curl -fL --retry 3 \
+       "https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_CMDLINE_TOOLS_REV}_latest.zip" \
+       -o /tmp/android-commandline-tools.zip \
+    && mkdir -p /tmp/android-commandline-tools \
+    && unzip -q /tmp/android-commandline-tools.zip -d /tmp/android-commandline-tools \
+    && mv /tmp/android-commandline-tools/cmdline-tools/* "${ANDROID_SDK_ROOT}/cmdline-tools/latest/" \
+    && rm -rf /tmp/android-commandline-tools /tmp/android-commandline-tools.zip
+
+# Android 16 / API 36 stable platform; match app/build.gradle.kts.
+# Building noninteractively requires the Android SDK licenses to be accepted.
+# By running this image, you accept the applicable Android SDK license terms.
+RUN yes | sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --licenses >/dev/null \
+    && sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" \
+       "platforms;android-36" "build-tools;35.0.0" "platform-tools" \
+    && chown -R gradle:gradle "${ANDROID_SDK_ROOT}"
+
+USER gradle
+WORKDIR /workspace
+COPY --chown=gradle:gradle . .
+
+# Fail the Docker build if Kotlin compilation or JVM unit tests fail.
+RUN gradle --no-daemon --console=plain :app:testDebugUnitTest
+RUN gradle --no-daemon --console=plain :app:assembleDebug
+
+# Extract the artifact to the host with BuildKit's --output=type=local.
+FROM scratch AS apk
+COPY --from=android-builder \
+    /workspace/app/build/outputs/apk/debug/app-debug.apk \
+    /TrailOneGPX-debug.apk

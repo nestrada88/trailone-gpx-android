@@ -1,0 +1,30 @@
+# TrailOne GPX Android — internal TrailONE 505
+# Track application source, tests, governance, documentation, and Docker recipes.
+
+# Gradle/Android generated state
+.gradle/
+.kotlin/
+**/build/
+local.properties
+
+# Host-only signing credentials and operator state
+.local/
+*.keystore
+*.jks
+*.p12
+*.pfx
+
+# Docker builder products and diagnostics
+dist/
+logs/
+android-build.log
+
+# Generated installable packages (publish as separate release assets)
+*.apk
+*.aab
+
+# Editor and local Python tooling caches
+.idea/
+*.iml
+__pycache__/
+*.py[cod]

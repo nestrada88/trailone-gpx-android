@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "TRAILONE505-ANDROID-PRIMARY-DEVICE",
+  "profile_version": "0.1.0",
+  "scope": "Internal deployment and device-targeted QA for TrailONE 505",
+  "record_status": "OWNER_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
+  "recorded_at": "2026-10-18",
+  "distribution": {
+    "audience": "Internal TrailONE 505 use",
+    "public_store_release_planned": false,
+    "mass_distribution_planned": false,
+    "primary_delivery_format": "APK",
+    "primary_installation_method": "ADB from authorized Linux development host",
+    "adb_install_authorized_by_owner": false,
+    "application_package_id": "com.trailone.gpx",
+    "signing_strategy": "TBD: stable private signing key/certificate for future updates; no credentials stored in repository",
+    "advanced_protection_observed": "File-manager sideloading blocked by Google Advanced Protection in owner-supplied screenshots; ADB deployment is planned, not device-verified"
+  },
+  "manufacturer": "Xiaomi",
+  "brand": "Redmi",
+  "device_name": "Redmi Note 13 Pro+ 5G",
+  "model": "23090RA98G",
+  "processor": {
+    "chipset": "MediaTek Dimensity 7200-Ultra",
+    "architecture": "64-bit ARM",
+    "cores": "Octa-core",
+    "max_clock_ghz": 2.8,
+    "cpu_abi": "arm64-v8a",
+    "cpu_abi_status": "EXPECTED_NOT_VERIFIED"
+  },
+  "memory": {
+    "physical_ram_gb": 12,
+    "extended_virtual_ram_gb": 12,
+    "reported_configuration": "12 GB + 12 GB",
+    "note": "Extended RAM is virtual memory, not additional physical RAM; no minimum application memory guarantees inferred"
+  },
+  "storage": {
+    "internal_gb": 512,
+    "used_gb_at_report": 126,
+    "available_gb_at_report": 386,
+    "technology": "UFS 3.1",
+    "capacity_is_dynamic": true
+  },
+  "os": {
+    "name": "Xiaomi HyperOS 3",
+    "version": "3.0.302.0.WNOMIXM.C07",
+    "android_version": 16,
+    "android_api_level": 36,
+    "android_build": "BP2A.250605.031.A3",
+    "security_patch_date": "2026-08-01"
+  },
+  "kernel": {
+    "version": "5.15.180",
+    "branch": "android13-8",
+    "build": "00021-g46a5565a0982-ab13743836"
+  },
+  "baseband": "MOLY.NR16.R1.MP3P5.TC8.PR1.SP.V1.P107",
+  "development_capabilities": {
+    "kotlin_native_android": true,
+    "compose_compatible": true,
+    "current_app_ui": "Native Android Views, NOT Jetpack Compose",
+    "gnss_hardware": "Reported present; not used by the current GPX import/enrichment/export application",
+    "packaging_supported": [
+      "APK",
+      "AAB"
+    ],
+    "packaging_required": "APK only"
+  },
+  "runtime_verification_needed": [
+    "adb devices -l; adb shell getprop ro.product.model",
+    "adb shell getprop ro.build.version.sdk",
+    "adb shell getprop ro.product.cpu.abilist",
+    "adb shell getprop ro.build.fingerprint",
+    "actual five-stage GPX workflow, SAF import/export and Android 16 insets",
+    "APK signature/upgrade path and Advanced Protection behavior on this device"
+  ]
+}

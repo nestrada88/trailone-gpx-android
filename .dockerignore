@@ -1,0 +1,13 @@
+.git
+.gradle
+.idea
+**/build
+**/.gradle
+**/local.properties
+**/.DS_Store
+**/*.apk
+**/*.aab
+dist
+*.zip
+
+android-build.log

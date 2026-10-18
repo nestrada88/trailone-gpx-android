@@ -1,0 +1,45 @@
+{
+  "identifier": "TRAILONE505-GPX-ANDROID-DOCKER-BUILD",
+  "version": "0.1.2",
+  "status": "WORKING_BUILD_ENVIRONMENT_NOT_RELEASE",
+  "application_id": "com.trailone.gpx",
+  "distribution": "single-device/internal APK (not Google Play, not AAB)",
+  "target": {
+    "device": "Redmi Note 13 Pro+ 5G (23090RA98G)",
+    "android_sdk": 36
+  },
+  "base_image": "gradle:8.13-jdk17-noble@sha256:ec973fb6579488ecba8cd24f4728cd819eda45d6b26f7f44a81682e1c034898f",
+  "gradle": "8.13",
+  "jdk": "17",
+  "agp": "8.11.1",
+  "kotlin": "2.2.21",
+  "android_commandline_tools_revision": "15859902",
+  "android_build_tools": "35.0.0",
+  "build_command": "bash docker/build.sh",
+  "apk_host_path": "dist/TrailOneGPX-debug.apk",
+  "test_reports_host_path": "dist/reports/testDebugUnitTest/",
+  "failure_log_host_path": "logs/docker-build-YYYYMMDDTHHMMSSZ.log",
+  "keystore_host_path": ".local/signing/trailone-internal-debug.keystore",
+  "keystore_policy": "private persistent local debug key, BuildKit secret mount, never distributed",
+  "existing_locked_files": 28,
+  "locked_files_unchanged": true,
+  "verification": {
+    "app_context_source_lock": "PASS",
+    "kotlin_engine_smoke": "6/6 PASS",
+    "kotlin_guided_smoke": "12/12 PASS",
+    "bash_syntax": "PASS",
+    "mock_docker_failure_handling": "PASS",
+    "mock_docker_success_handling": "PASS (not a real APK build)",
+    "real_docker_build": "NOT EXECUTED (Docker engine unavailable in artifact environment)",
+    "signed_apk": "NOT GENERATED",
+    "android_device_install": "NOT EXECUTED"
+  },
+  "reproducibility_limits": [
+    "Android SDK tool ZIP not hash-pinned",
+    "Maven dependency artifacts versioned but not fully hash-locked",
+    "No real Docker build run in current environment",
+    "UI and GPX engine unchanged"
+  ],
+  "source_repository_status": "Android source package not committed to GitHub",
+  "no_brand_resource_changes": true
+}

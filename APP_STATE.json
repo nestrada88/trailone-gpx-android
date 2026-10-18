@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "context_id": "TRAILONE-GPX-ANDROID-DEVCTX",
+  "context_version": "0.1.3",
+  "context_status": "WORKING_CONTEXT_NOT_RELEASE",
+  "as_of_date": "2026-10-18",
+  "application": {
+    "name": "TrailOne GPX",
+    "application_id": "com.trailone.gpx",
+    "platform": "Android",
+    "implementation_language": "Kotlin",
+    "ui_implementation": "Android Views",
+    "minimum_sdk": 26,
+    "target_sdk": 36,
+    "compile_sdk": 36,
+    "app_version_name": "1.0.0",
+    "app_version_code": 1,
+    "app_version_is_not_release_evidence": true
+  },
+  "approved_baselines": {
+    "guided_ux": {
+      "name": "Five-stage sequential guided workflow",
+      "stages": [
+        "IMPORT",
+        "CONFIGURE",
+        "GENERATE",
+        "REVIEW",
+        "EXPORT"
+      ],
+      "status": "OWNER_APPROVED_AS_IMPLEMENTATION_BASELINE",
+      "approval_evidence": "Explicit project-conversation approval; no signed versioned UX release"
+    },
+    "brand_palette": {
+      "repository": "nestrada88/trailone-brand-context",
+      "repository_main_commit_observed": "247863bf557bd422ed20c0b972209a8f9b7b2e60",
+      "path": "brand/visual-identity/color/trailone.palette.json",
+      "version": "1.0.0",
+      "status": "APPROVED_UNSIGNED",
+      "sha256": "092f71bb78c05738e8189c181a0c97454269caedddd3d16794d7622fc94107e9"
+    }
+  },
+  "source_baselines": {
+    "python_behavior_reference": {
+      "repository": "nestrada88/gpx-wpt-tag-revgeo",
+      "main_commit_observed": "caa6e1644687e60a9e3598c527189227db0ec4ae",
+      "automatic_adoption_of_new_commits": false
+    },
+    "android_local_source": {
+      "archive": "TrailOneGPXAndroid-Five-Stage-Guided-v1.0.0-implementation.zip",
+      "sha256": "5eb362c04d44e9197ac242da3a37980fecae1c83971a831bd70ea82627def7c3",
+      "location": "delivered project archive; not confirmed in GitHub",
+      "android_build_verified": false
+    },
+    "brand_image_T1001": {
+      "sha256": "2ee96b0ea04605849b5e933dd2f84cbebbd93163e400c957554fd70661f2b184",
+      "icon_is_approved_asset": false
+    }
+  },
+  "build_toolchain": {
+    "gradle": "8.13",
+    "agp": "8.11.1",
+    "kotlin": "2.2.21",
+    "java": "17",
+    "android_platform": "android-36",
+    "android_build_tools": "35.0.0",
+    "android_commandline_tools_revision": "15859902",
+    "docker_base": "gradle:8.13-jdk17-noble",
+    "junit": "4.13.2",
+    "completely_hermetic_build": false
+  },
+  "local_validation_2026_10_18": {
+    "engine_smoke": {
+      "passed": 6,
+      "total": 6
+    },
+    "guided_smoke": {
+      "passed": 12,
+      "total": 12
+    },
+    "source_archive_integrity": "PASS",
+    "full_gradle_android_build": "FAILED_COMPILE_MAIN_ACTIVITY_LINE_625_PRE_FIX",
+    "device_test": "NOT_RUN",
+    "kotlin_vs_python_parity": "NOT_VERIFIED"
+  },
+  "open_gates": [
+    "Gradle testDebugUnitTest and assembleDebug with actual Android SDK",
+    "Device import/configure/generate/review/export testing",
+    "SAF provider cancellation and lifecycle restoration",
+    "Network privacy and Nominatim failure semantics",
+    "Accessibility/TalkBack/font scaling",
+    "Golden-file parity versus Python",
+    "App launcher icon implementation and approval",
+    "Brand UI component review",
+    "Reconcile stale brand STATE.json bootstrap declaration through the brand governance process",
+    "Confirm exact handset/ABI/API with ADB",
+    "Verify internal ADB installation while Advanced Protection active",
+    "Create/retain stable private APK signing identity for updates",
+    "Run full five-stage test and offline+SAF recovery on target phone",
+    "Rebuild source patch with Docker, run Gradle unit tests and APK signature verification; pending user-host confirmation"
+  ],
+  "code_frozen_by_context_setup": false,
+  "github_updated": false,
+  "brand_repository_updated": false,
+  "product_scope": {
+    "audience": "Internal TrailONE 505",
+    "mass_release": false,
+    "single_primary_device": true,
+    "primary_device_profile": "governance/DEVICE_PROFILE.json",
+    "primary_delivery": "APK via authorized ADB",
+    "public_play_store_distribution_required": false,
+    "aab_required": false,
+    "scope_basis": "Owner-declared 2026-10-18"
+  },
+  "primary_device": {
+    "profile_id": "TRAILONE505-ANDROID-PRIMARY-DEVICE",
+    "profile_version": "0.1.0",
+    "verification": "OWNER_REPORTED_NOT_INDEPENDENTLY_VERIFIED",
+    "model": "23090RA98G",
+    "android_api_reported": 36,
+    "cpu_abi_reported": "arm64-v8a",
+    "cpu_abi_verified": false,
+    "advanced_protection_file_manager_install_blocked": true,
+    "adb_install_verified": false
+  },
+  "last_context_change": {
+    "version": "0.1.3",
+    "change_type": "KOTLIN_UI_COMPILER_FIX",
+    "reason": "Host Docker log confirms MainActivity.kt:625 String-to-Editable type mismatch; replace EditText text assignment with setText(value)",
+    "changes": [
+      "app/src/main/java/com/trailone/gpx/ui/MainActivity.kt",
+      "governance/SOURCE_LOCK.json",
+      "APP_STATE.json"
+    ],
+    "approved_workflow_changed": false,
+    "gpx_engine_changed": false,
+    "brand_changed": false,
+    "build_toolchain_changed": false,
+    "android_build_verified": false
+  }
+}
