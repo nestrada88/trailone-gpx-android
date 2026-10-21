@@ -4,6 +4,7 @@
     <application android:allowBackup="false"
         android:usesCleartextTraffic="false"
         android:label="TrailOne GPX"
+        android:icon="@mipmap/ic_launcher"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">
         <activity android:name=".ui.MainActivity" android:exported="true">
             <intent-filter>

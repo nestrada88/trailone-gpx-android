@@ -37,6 +37,15 @@
       "version": "1.0.0",
       "status": "APPROVED_UNSIGNED",
       "sha256": "092f71bb78c05738e8189c181a0c97454269caedddd3d16794d7622fc94107e9"
+    },
+    "gpx_application_icon": {
+      "identifier": "TRAILONE-GPX-APP-ICON-001",
+      "version": "1.0.0",
+      "status": "APPROVED_ARTWORK_INTEGRATED",
+      "source_repository": "nestrada88/trailone-brand-context",
+      "sha256": "be19ff29cc63cf4e3615fb9613668334f086cb9a2d879a4bc004eaeefad7be38",
+      "android_resource": "app/src/main/res/mipmap-nodpi/ic_launcher.png",
+      "device_visual_validation": "PENDING"
     }
   },
   "source_baselines": {
