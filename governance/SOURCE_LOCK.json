@@ -7,7 +7,7 @@
   },
   "source_tree_sha256": {
     ".dockerignore": "c632f60a3bf755dadbda1131a90efc179a07af339a95e9fad22f5b9f544156dd",
-    ".gitignore": "abb17a2ab04272fb76c136869be545a9a938d4617d253cc3c5eb7920e0892110",
+    ".gitignore": "5e6bf2da3fad7a750065371cd080ff6986acc92daa8796b95f0330a1f8936f09",
     "ANDROID_COMPILER_FIX.md": "6e4032e4c99ac5c2c95047255b84a005d82e9f4128a5d38e0e45016b22ff1de7",
     "BUILD_AND_VALIDATION.md": "36e0e7b9d9bedb91288fb19f8c094843ae70af31b2c5375f7cbb59fec162a767",
     "Dockerfile.android": "a596b5912f9c3f3b12c70f541b7e1345855506cfba1d8b3f5bad922f761d5bb8",
@@ -18,7 +18,7 @@
     "README.md": "6ed101b2be716189c355c6d9b34b7f345fc4459276653dbe427f13f33bce4810",
     "SDK_BUILD_FIX.md": "bd2d51038b9a21ba0a1d169ace3e41863087c9801f7821bf088fc025c6ce1dfb",
     "app/build.gradle.kts": "cbc56973457ed27510bb154ea04a3bc8f53c371e023a01e60b0655957be6f278",
-    "app/src/main/AndroidManifest.xml": "b1e11cfa44c7bca4ad139462001b05fb394b8ca0e01ad019f66f3e2fb2ff2f78",
+    "app/src/main/AndroidManifest.xml": "f65df869012392e6c98a6ebffca8fdae1665a32b396f0b579a2bc0121df6a72a",
     "app/src/main/java/com/trailone/gpx/core/GpxEngine.kt": "ecceffd8d0d976f6da4f7fbf9c50c475ffd40e9119ec6f7a39b89532241d347d",
     "app/src/main/java/com/trailone/gpx/network/NominatimGeocoder.kt": "7fd4380e33e0eefd1bfb866d8c927a8d29fa4bd577a62c1296ec366409b58996",
     "app/src/main/java/com/trailone/gpx/ui/GuidedSession.kt": "bfdf6b18ce2c6b6528f09c4d36bdb14a0904a9b799331b4a03d4b00bac0a3bbb",
@@ -33,7 +33,8 @@
     "tools/bootstrap-wrapper.sh": "2c852c0401429b398859970d3e77832a12280506a5c1223530b5f48d16cf39af",
     "tools/build-apk-docker.sh": "3f508b079f2547f71ed2d9e81d640e9deb1a9663e6ba5ae0886606e8f8c8016a",
     "tools/test-core.sh": "d64afa7105a76f3ec5e0f52770b1a6c78a84803d52cfd90806f45ade82e70312",
-    "tools/test-guided.sh": "326f80b58aa4b7293a87c9ab0a654b1a7da8a9dace0ebf762e9422aaeb6daaa3"
+    "tools/test-guided.sh": "326f80b58aa4b7293a87c9ab0a654b1a7da8a9dace0ebf762e9422aaeb6daaa3",
+    "app/src/main/res/mipmap-nodpi/ic_launcher.png": "be19ff29cc63cf4e3615fb9613668334f086cb9a2d879a4bc004eaeefad7be38"
   },
   "remote_references_observed_2026_10_18": {
     "brand_main_commit": "247863bf557bd422ed20c0b972209a8f9b7b2e60",
